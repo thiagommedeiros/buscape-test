@@ -1,0 +1,16 @@
+@import '_colors';
+@import '_mixins';
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 18px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  background-color: $color-white;
+  box-shadow: 1px 1px 5px $color-gray-200;
+
+  @include respond-to('desktop-small') {
+    width: 100%;
+  }
+}

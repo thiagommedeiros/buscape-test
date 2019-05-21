@@ -1,0 +1,144 @@
+@import "_colors";
+@import "_mixins";
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0 0 30px 0;
+
+  .title {
+    color: $color-gray-600;
+    font-size: 0.9rem;
+    letter-spacing: 0;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $color-gray-100;
+    word-break: break-all;
+
+    i {
+      display: inline-block;
+      margin-left: 15px;
+      color: $primary-color;
+    }
+  }
+}
+
+.callToAction {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  .values {
+    display: flex;
+    flex-direction: column;
+    color: $color-gray-400;
+    font-size: 0.7rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+
+    .installmentsWrapper {
+      display: inline-block;
+      margin-bottom: 3px;
+      color: $color-green;
+
+      .highlightAmount {
+        display: inline-block;
+        margin-left: 3px;
+        font-size: 1.2rem;
+      }
+    }
+
+    .inCash {
+      display: inline-block;
+      margin: 0 3px;
+      color: $color-green;
+    }
+  }
+
+  .btnAddToCart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.6rem;
+    font-weight: 900;
+    color: white;
+    padding: 3px 10px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: $color-green;
+    cursor: pointer;
+  
+    i {
+      margin-top: 2px;
+      margin-left: 8px;
+    }  
+  }
+}
+
+@include respond-to('mobile-medium') {
+  .details {
+    .title {
+      word-break: none;
+    }
+  }
+}
+
+@include respond-to('tablet') {
+  .details {
+    .title {
+      font-size: 1.6rem;
+    }
+  }
+
+  .callToAction {
+    flex-direction: row;
+
+    .values {
+      font-size: 1rem;
+
+      .installmentsWrapper {
+        .highlightAmount {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .btnAddToCart {
+      font-size: 1rem;
+      height: 43px;
+      width: 50%;
+      margin-left: 20px;
+    }
+  }
+}
+
+@include respond-to('desktop-small') {
+  .details {
+    .title {
+      font-size: 2rem;
+    }
+  }
+
+  .callToAction {
+    flex-direction: row;
+
+    .values {
+      font-size: 1.5rem;
+
+      .installmentsWrapper {
+        .highlightAmount {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .btnAddToCart {
+      font-size: 1rem;
+      height: 43px;
+      width: 50%;
+      margin-left: 20px;
+    }
+  }
+}
