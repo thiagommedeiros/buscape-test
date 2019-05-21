@@ -1,0 +1,61 @@
+@import '_colors';
+
+.wrapper {
+  position: relative;
+  cursor: pointer;
+
+  .line {
+    display: block;
+    width: 33px;
+    height: 5px;
+    margin-bottom: 5px;
+    background: $color-black;
+    border-radius: 8px;
+    transform-origin: 4px 0px;
+    transition: transform 0.3s cubic-bezier(0.77,0.2,0.05,1.0),
+      background 0.3s cubic-bezier(0.77,0.2,0.05,1.0),
+      opacity 0.3s ease;
+
+    &:first-child {
+      transform-origin: 0% 0%;
+    }
+
+    &:nth-last-child(2) {
+      transform-origin: 0% 100%;
+    }
+  }
+
+  .active {
+    .line {
+      opacity: 1;
+      transform: rotate(45deg) translate(-5px, -16px);
+      background: $color-black;
+
+      &:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+      }
+
+      &:nth-last-child(2){
+        transform: rotate(-45deg) translate(-4px, 16px);
+      }
+    }
+  }
+
+  .badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    bottom: -8px;
+    left: -12px;
+    color: $color-white;
+    font-size: 1.3rem;
+    font-weight: 900;
+    border-radius: 50%;
+    background-color: $color-red;
+    z-index: 1;
+  }
+}
