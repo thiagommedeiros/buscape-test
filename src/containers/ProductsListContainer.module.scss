@@ -1,0 +1,12 @@
+@import '_mixins';
+
+.container {
+  width: 98vw;
+  margin: 0 auto;
+  padding: 30px 0;
+  
+  @include respond-to('desktop-small') {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
